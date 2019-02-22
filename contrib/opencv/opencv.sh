@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install cmake checkinstall
 mkdir OpenCV
 cd OpenCV
-ret_code = $?
+ret_code=$?
 
 if [ $ret_code != 0 ]
 then
@@ -20,7 +20,7 @@ fi
 echo "Downloading OpenCV" $version
 wget -O OpenCV-$version.zip http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/$version/opencv-"$version".zip/download
 
-ret_code = $?
+ret_code=$?
 
 if [ $ret_code != 0 ]
 then
@@ -30,7 +30,7 @@ fi
 
 echo "Installing OpenCV" $version
 unzip OpenCV-$version.zip
-ret_code = $?
+ret_code=$?
 
 if [ $ret_code != 0 ]
 then
@@ -42,7 +42,7 @@ cd opencv-$version
 mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_PYTHON_SUPPORT=ON -D BUILD_opencv_java=OFF ..
-ret_code = $?
+ret_code=$?
 
 if [ $ret_code != 0 ]
 then
@@ -52,7 +52,7 @@ fi
 
 make -j2
 
-ret_code = $?
+ret_code=$?
 
 if [ $ret_code != 0 ]
 then
